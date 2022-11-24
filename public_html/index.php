@@ -4,15 +4,22 @@ header('Content-Type: text/html; charset=utf-8');
 mb_internal_encoding('UTF-8');
 setlocale(LC_ALL, 'ru_RU.UTF-8');
 setlocale(LC_NUMERIC, 'C');
-session_start();
 
 spl_autoload_register('classAutoload');//функции автоподгрузки
 register_shutdown_function('shutDown');//запуск функции после завершения скрипта
 set_error_handler('systemError');//перехват системных ошибок
 
-define ('D1',dirname(__DIR__).'/');
-define ('PUBLIC_DIR',D1.'public_html/');
-define ('MDIR', basename(D1));
+define ('D1', dirname(__DIR__) . '/');
+define ('PUBLIC_DIR',getcwd().'/');
+
+if(!strpos(PUBLIC_DIR,'htdocs'))//
+{
+    define ('MDIR', basename(D1));
+}
+else
+{
+    define ('MDIR', 'multitips.epizy.com');
+}
 
 define ('STATICS_DIR','statics');
 define ('STATICS_PATH',PUBLIC_DIR.STATICS_DIR.'/');
@@ -57,7 +64,7 @@ $lngs=
             <li>The ability to transfer the hint text directly, without the data-tip attribute;</li>
             <li>Passing your own function to be executed after the hint is shown.</li>',
             'str3'=>'The ability to show the pending result of the script (for example, after AJAX work) through the MultiTips hints can make this tool very useful for you.',
-            'str4'=>'See on <a href="https://github.com/alexrosspage/hiddenarea" target="_blank"><svg height="22" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="22" data-view-component="true" class="octicon octicon-mark-github">
+            'str4'=>'See on <a href="https://github.com/alexrosspage/multitips" target="_blank"><svg height="22" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="22" data-view-component="true" class="octicon octicon-mark-github">
     <path fill="#0b8693" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
 </svg> GitHub</a>',
             'tip1'=>"Hover hints are very useful when you want to save space and declutter a page with information. If you are using a touchpad and don't have a mouse, then the tooltip will work when you click on the element.",

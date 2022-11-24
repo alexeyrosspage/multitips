@@ -1,1 +1,0 @@
-CLOSE: 2 Use of undefined constant TEMP_DIR - assumed 'TEMP_DIR' (this will throw an Error in a future version of PHP) W:\domains\multitips\public_html\index.php: 22
