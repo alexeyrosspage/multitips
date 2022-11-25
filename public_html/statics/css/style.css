@@ -92,7 +92,6 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
 
 .itips_view div {
     background: #eef9ff;
-    /*border: 2px solid #1e434e;*/
     border: 2px solid #7897a1;
     border-radius: 20px;
     box-shadow: 2px 2px 8px rgba(3,62,80,.4);
@@ -126,12 +125,12 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
     border-color: #f9b110;
 }
 
-#itips4 div {
+#itipsajax1 div {
     background: #f2ffea;
     border-color: #71cb12;
 }
 
-#itips5 div {
+#itipsajax2 div {
     background: #e4f8ff;
     border-color: #7ecae5;
 }
@@ -165,11 +164,11 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
 #itips2 div::before,
 #itips2 div::after {border-top-color: #fffad4;}
 
-#itips4 div::before,
-#itips4 div::after {border-top-color: #f2ffea;}
+#itipsajax1 div::before,
+#itipsajax1 div::after {border-top-color: #f2ffea;}
 
-#itips5 div::before,
-#itips5 div::after {border-top-color: #e4f8ff;}
+#itipsajax2 div::before,
+#itipsajax2 div::after {border-top-color: #e4f8ff;}
 
 .itips_view div.center::before,
 .itips_view div.center::after {
@@ -195,11 +194,11 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
 #itips2 div.center_up::before,
 #itips2 div.center_up::after {border-bottom-color: #fffad4;}
 
-#itips4 div.center_up::before,
-#itips4 div.center_up::after {border-bottom-color: #f2ffea;}
+#itipsajax1 div.center_up::before,
+#itipsajax1 div.center_up::after {border-bottom-color: #f2ffea;}
 
-#itips5 div.center_up::before,
-#itips5 div.center_up::after {border-bottom-color: #e4f8ff;}
+#itipsajax2 div.center_up::before,
+#itipsajax2 div.center_up::after {border-bottom-color: #e4f8ff;}
 
 .itips_view div.left::before,
 .itips_view div.left::after {
@@ -219,7 +218,6 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
     border: 8px solid rgba(0,0,0,0);
     border-bottom-width: 0;
     border-top-width: 5px;
-    /*border-top-color: #1e434e !important;*/
     border-top-color: #7897a1;
     bottom: -7px;
 }
@@ -230,9 +228,9 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
 
 #itips2 div::before {border-top-color: #f9b110;}
 
-#itips4 div::before {border-top-color: #71cb12;}
+#itipsajax1 div::before {border-top-color: #71cb12;}
 
-#itips5 div::before {border-top-color: #7ecae5;}
+#itipsajax2 div::before {border-top-color: #7ecae5;}
 
 
 .itips_view div.center::before {
@@ -243,7 +241,6 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
 .itips_view div.center_up::before {
     border-top-width: 0;
     border-bottom-width: 5px;
-    /*border-bottom-color: #1e434e !important;*/
     border-bottom-color: #7897a1;
     bottom: auto;
     top: -7px;
@@ -255,9 +252,9 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
 
 #itips2 div.center_up::before {border-bottom-color: #f9b110;}
 
-#itips4 div.center_up::before {border-bottom-color: #7ecae5;}
+#itipsajax1 div.center_up::before {border-bottom-color: #7ecae5;}
 
-#itips5 div.center_up::before {border-bottom-color: #71cb12;}
+#itipsajax2 div.center_up::before {border-bottom-color: #71cb12;}
 
 
 .itips_view div.left::before {
@@ -499,9 +496,6 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
     padding: 10px;
 }
 
-/*.samples ul li span,
-.samples ul li span:hover {transition: border-color 1s;}*/
-
 .samples ul li span {
     border: 3px solid rgba(202,216,221,.5);
     border-radius: 8px;
@@ -519,13 +513,6 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
 .samples ul li:nth-child(4) span {border-color: rgba(38,203,18,.25);}
 .samples ul li:nth-child(5) span {border-color: rgba(79,203,247,.28);}
 .samples ul li:nth-child(6) span {border-color: rgba(163,79,227,.22);}
-
-/*.samples ul li:nth-child(1) span:hover {border-color: rgba(205,8,8,.65);}
-.samples ul li:nth-child(2) span:hover {border-color: rgba(255,94,32,.75);}
-.samples ul li:nth-child(3) span:hover {border-color: rgba(249,177,16,.82);}
-.samples ul li:nth-child(4) span:hover {border-color: rgba(38,203,18,.75);}
-.samples ul li:nth-child(5) span:hover {border-color: rgba(79,203,247,.78);}
-.samples ul li:nth-child(6) span:hover {border-color: rgba(163,79,227,.72);}*/
 
 .samples ul li span::before {
     background: #f2f7f7;
