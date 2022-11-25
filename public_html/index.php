@@ -73,7 +73,7 @@ $lngs=
             'ankor2'=>'Highlighted tips',
             'tip3'=>'Click hints are very useful when you do not impose your information, but at any time the user can access it. Clicking on this message will close it.',
             'ankor3'=>'Tips by click (tap)',
-            'ankor4'=>'Make an AJAX request and remove it after 10 seconds',
+            'ankor4'=>'Make an AJAX request and remove it after <i id="sec">10</i> seconds',
             'ankor5'=>'Make an AJAX request and execute my JS function',
             'ankor6'=>'Hide all tips from screen'
         ],
@@ -95,7 +95,7 @@ $lngs=
             'ankor2'=>'Подсказка, выделенная цветом',
             'tip3'=>'Подсказки по клику очень полезны, когда вы не навязываете свою информацию, но в любой момент пользователь может к ней обратится. Клик по этому сообщению закроет его.',
             'ankor3'=>'Подсказка по клику (касанию)',
-            'ankor4'=>'Сделать AJAX-запрос и убрать его через 10 секунд',
+            'ankor4'=>'Сделать AJAX-запрос и убрать его через <i id="sec">10</i> секунд',
             'ankor5'=>'Сделать AJAX-запрос и выполнить мою JS-функцию',
             'ankor6'=>'Скрыть все подсказки с экрана'
         ]

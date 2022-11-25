@@ -333,6 +333,29 @@ $(document).ready(function ()
     $('#tips_click').Tip({type: 'click','time':10000});
     $('#tips_color').Tip({'color':'red'});
 
+    function timeChange()
+    {
+        let obj = $('#sec');
+        let max_seconds=10;
+        let seconds = max_seconds;
+        let seconds_timer_id = setInterval(
+function()
+        {
+            if (seconds > 0)
+            {
+                seconds --;
+                if(seconds)
+                {
+                    obj.text(seconds);
+                }
+                else
+                {
+                    obj.text(max_seconds);
+                    clearInterval(seconds_timer_id);
+                }
+            }
+        }, 1000);
+    }
 
     $('#tips_ajax1').on('click',function ()
     {
@@ -344,6 +367,7 @@ $(document).ready(function ()
                 if ((data) && (data = CheckJSON(data)))
                 {
                     obj.Tip({id:'ajax1',type: 'click_auto', 'text':data['message'],'time':10000});
+                    timeChange();
                 }
                 else
                 {
