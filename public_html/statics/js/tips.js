@@ -279,9 +279,9 @@ $.fn.Tip = function (options)
     //Tips type:
     // - hover tips (touchpad click),
     // - click tips/disable re-click
-    // - auto show tips/disable click on tips
-    // - auto-show tips/turn off after a set time
-    // - hide all tips from the screen
+    // - click_mess show tips/disable click on tips
+    // - click_auto tips/turn off after a set time
+    // - hide_all tips from the screen
     options.type = options.type || 'hover';
 
     //время автоскрывания подсказки по умолчанию
