@@ -18,35 +18,64 @@ jQuery plugin "MultiTips" adds some very useful options and customization option
 ```
 <script defer src="jquery_2.2.4.min.js"></script>
 <!--<script defer src="main.js"></script> Helper functions can be defined here -->
-<script defer src="hiddenarea.js"></script>
+<script defer src="tips.js"></script>
 ```
 #### Plugin connection in script:
 ```
 $(document).ready(function ()
 {
- $('#hiddenarea').hiddenarea(
-     {
-         'number': 3,
-         'message': 'Text below plugin'
-     });
+   $('#tip_1').Tip();
 });
 ```
 or directly in the body of the page, leaving the default settings
 ```
-<script>$('#hiddenarea').hiddenarea();</script>
+<script>
+   $('#tip_2').Tip({type: 'click_auto',color:'red', time: 5000, 'text': 'Image refresh failed, please refresh the page and try again'});
+</script>
 ```
-#### Plugin connection in HTML. You can connect the plugin several times on the page, the script will look for elements with the class "upload":
+#### Plugin connection in HTML. You can connect the plugin several times on the page:
 ```
-<div class="uploads" id="hiddenarea"></div>
+<div data-tip="My title for hover" id="tip_1"></div>
+<div id="tip_2"></div>
+
 ```
 #### Plugin settings
 Plugin settings are defined by the «option» variable. The variable option is an object, with the following keys:
 ```
-option['message'];// Message under the block, pictures. The default is empty.
+    //plugin configuration option
+    options = options || {};
 
-option['megabyte'];// The maximum image size in megabytes. The default is 5 megabytes.
+    //Ability to define a specific ID for each tips for further manipulation of its behavior on the page
+    options.id = options.id || 0;
+    
+    //Tips type:
+    // - «hover» tips (touchpad click) - default,
+    // - «click» tips/disable re-click
+    // - «click_mess» show tips/disable click on tips
+    // - «click_auto» tips/turn off after a set time
+    // - «hide_all» tips from the screen
+    options.type = options.type || 'hover';
 
-option['number'];// The number of images in the block. The default is one picture.
+    //default tips auto-hide time
+    options.time = options.time || 3000;
+
+    //permission to close the tips
+    options.close = options.close || true;
+
+    //close all tips on the screen
+    options.hide = options.hide || true;
+
+    //tips color
+    options.color = options.color || 'grey';
+
+    //replace tips object
+    options.replace = options.replace || false;
+
+    //transmitting the tips text directly, without data-tip
+    options.text = options.text || null;
+
+    //passing your own function to execute after the tips is shown
+    options.function = options.function || null;
 ```
 #### Plugin helper functions that can be defined before connecting in the plugin.
 1. saveError. 
@@ -57,20 +86,7 @@ This function is to show and/or send an error to the server. By default (if the 
         alert('HiddenAres error. '+error['message']+': '+error['line']);//You can comment
 this line and then no errors will be displayed
     }
-```
-
-2. Tip
-This function is needed to show hints and the result of your actions. By default (if the function is not defined above), the function will display an message on the browser screen through the «alert» command.
-```
-    $.fn.Tip=function (error)
-    {
-        if(typeof (error['text'])!='undefined'){
-            alert(error['text']);//You can comment
-this line and then no messages will be displayed
-        }
-    }
-```
-
+   ```
 ***
 ## License
 MIT
