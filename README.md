@@ -1,4 +1,5 @@
-# jQuery plugin "MultiTips" adds some very useful options and customization options to the classic "hover" tooltips options.
+# Multi-tips (jQuery plugin) — active tips on your page
+jQuery plugin "MultiTips" adds some very useful options and customization options to the classic "hover" tooltips options.
 
 ![](https://github.com/alexrosspage/multitips/blob/main/TIPS_B.png)
 
