@@ -122,7 +122,7 @@ $.Tip = function (input, options, tip)
                         results = document.createElement('div'),
                         $results;
 
-                    color = ((options.color === 'red') ? ' style="color:#FF0000"' : '');
+                    color = ((options.color === 'red') ? ' style="color:#ff4700"' : '');
 
                     $results = $(results).addClass('itips_view').addClass('on').attr('id', 'itips' + tip).html('<div' + color + '><span>' + text + '</span></div>');// Create jQuery object for results - создаем объект результатов
                     $('#all_tips').append(results);// Add to body element - добавляем результаты в body
