@@ -122,7 +122,7 @@ $.Tip = function (input, options, tip)
                         results = document.createElement('div'),
                         $results;
 
-                    color = ((options.color === 'red') ? ' style="color:#ff4700"' : '');
+                    color = ((options.color === 'red') ? ' style="color:#FF0000"' : '');
 
                     $results = $(results).addClass('itips_view').addClass('on').attr('id', 'itips' + tip).html('<div' + color + '><span>' + text + '</span></div>');// Create jQuery object for results - создаем объект результатов
                     $('#all_tips').append(results);// Add to body element - добавляем результаты в body
@@ -279,9 +279,9 @@ $.fn.Tip = function (options)
     //Tips type:
     // - hover tips (touchpad click),
     // - click tips/disable re-click
-    // - click_mess show tips/disable click on tips
-    // - click_auto tips/turn off after a set time
-    // - hide_all tips from the screen
+    // - auto show tips/disable click on tips
+    // - auto-show tips/turn off after a set time
+    // - hide all tips from the screen
     options.type = options.type || 'hover';
 
     //время автоскрывания подсказки по умолчанию
@@ -333,29 +333,6 @@ $(document).ready(function ()
     $('#tips_click').Tip({type: 'click','time':10000});
     $('#tips_color').Tip({'color':'red'});
 
-    function timeChange()
-    {
-        let obj = $('#sec');
-        let max_seconds=10;
-        let seconds = max_seconds;
-        let seconds_timer_id = setInterval(
-function()
-        {
-            if (seconds > 0)
-            {
-                seconds --;
-                if(seconds)
-                {
-                    obj.text(seconds);
-                }
-                else
-                {
-                    obj.text(max_seconds);
-                    clearInterval(seconds_timer_id);
-                }
-            }
-        }, 1000);
-    }
 
     $('#tips_ajax1').on('click',function ()
     {
@@ -366,12 +343,11 @@ function()
             {
                 if ((data) && (data = CheckJSON(data)))
                 {
-                    obj.Tip({id:'ajax1',type: 'click_auto', 'text':data['message'],'time':10000});
-                    timeChange();
+                    obj.Tip({type: 'click_auto', 'text':data['message'],'time':10000});
                 }
                 else
                 {
-                    obj.Tip({id:'ajax1',type: 'click_auto', color: 'red','text':lngs[lng]['error']});
+                    obj.Tip({type: 'click_auto', color: 'red','text':lngs[lng]['error']});
                 }
             });
     });
@@ -398,11 +374,11 @@ function()
             {
                 if ((data) && (data = CheckJSON(data)))
                 {
-                    obj.Tip({id:'ajax2',type: 'click_auto', 'text':data['message'],'time':5000,'function':shake});
+                    obj.Tip({type: 'click_auto', 'text':data['message'],'time':5000,'function':shake});
                 }
                 else
                 {
-                    obj.Tip({id:'ajax2',type: 'click_auto', color: 'red','text':lngs[lng]['error']});
+                    obj.Tip({type: 'click_auto', color: 'red','text':lngs[lng]['error']});
                 }
             });
     });
